@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Расчет расстояния между двумя точками</title>
+    <script>
+        function calcularDistancia() {
+            // Получить значения полей (предположить 0, если пусто)
+            var x1 = parseFloat(document.getElementById("x1").value) || 0;
+            var y1 = parseFloat(document.getElementById("y1").value) || 0;
+            var x2 = parseFloat(document.getElementById("x2").value) || 0;
+            var y2 = parseFloat(document.getElementById("y2").value) || 0;
+            
+            // Вычислить расстояние по формуле евклидова расстояния
+            var distancia = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+            
+            // Показать результат в поле расстояния, округленный до 2 десятичных знаков
+            document.getElementById("distancia").value = distancia.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <h1>Расчет расстояния между двумя точками</h1>
+    <form name="formDistancia">
+        <p>Введите координаты двух точек:</p>
+        <label for="x1">x1:</label>
+        <input type="text" id="x1" name="x1" size="5" value="0" onSelect="calcularDistancia()"> <br><br>
+        
+        <label for="y1">y1:</label>
+        <input type="text" id="y1" name="y1" size="5" value="0"> <br><br>
+        
+        <label for="x2">x2:</label>
+        <input type="text" id="x2" name="x2" size="5" value="0"> <br><br>
+        
+        <label for="y2">y2:</label>
+        <input type="text" id="y2" name="y2" size="5" value="0"> <br><br>
+        
+        <label for="distancia">Расстояние:</label>
+        <input type="text" id="distancia" name="distancia" size="10" readonly> <br><br>
+        
+        <input type="button" value="Вычислить" onClick="calcularDistancia()">  <!-- Дополнительная кнопка для вычисления -->
+        <input type="reset" value="Очистить">
+    </form>
+</body>
+</html>
