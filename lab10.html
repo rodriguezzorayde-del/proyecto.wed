@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Определение номера дня недели</title>
+    <script>
+        function determinarNumero() {
+            var dia = document.getElementById("dia").value.toLowerCase();
+            var numero = "";
+            
+            switch (dia) {
+                case "понедельник":
+                    numero = 1;
+                    break;
+                case "вторник":
+                    numero = 2;
+                    break;
+                case "среда":
+                    numero = 3;
+                    break;
+                case "четверг":
+                    numero = 4;
+                    break;
+                case "пятница":
+                    numero = 5;
+                    break;
+                case "суббота":
+                    numero = 6;
+                    break;
+                case "воскресенье":
+                    numero = 7;
+                    break;
+                default:
+                    numero = "нет такого дня";
+            }
+            
+            document.getElementById("numero").value = numero;
+        }
+    </script>
+</head>
+<body>
+    <h1>Определение номера дня недели</h1>
+    <form name="formDia">
+        <p>Введите название дня недели:</p>
+        <input type="text" id="dia" name="dia" size="20"> <br><br>
+        
+        <p>Номер дня:</p>
+        <input type="text" id="numero" name="numero" size="10" readonly> <br><br>
+        
+        <input type="button" value="Определить" onClick="determinarNumero()">
+        <input type="reset" value="Сбросить">
+    </form>
+</body>
+</html>
