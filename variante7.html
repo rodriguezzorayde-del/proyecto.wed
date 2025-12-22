@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Вариант 7: Проверка ввода</title>
+    <script language="JavaScript">
+    <!--
+    function verify() {
+        // Ввод строки
+        var str = document.inp.m.value;
+        // Преобразование строки в число
+        var int = parseInt(str);
+        // Проверка
+        if (int == 1 || int == 2 || int == 12) {
+            alert("Зима");
+            return true;  // Разрешить отправку
+        } else if (3 <= int && int <= 5) {
+            alert("Весна");
+            return true;
+        } else if (6 <= int && int <= 8) {
+            alert("Лето");
+            return true;
+        } else if (9 <= int && int <= 11) {
+            alert("Осень");
+            return true;
+        } else {
+            alert("Неверно!");
+            return false;  // Заблокировать отправку
+        }
+    }
+    //-->
+    </script>
+</head>
+<body lang="RU">
+    <h2>Контроль ввода - Вариант 7</h2>
+    <p>Введите номер текущего месяца:</p>
+    <form name="inp" onsubmit="return verify()">
+        <input name="m" size="2" type="text">
+        <input type="submit" value="Отправить">
+    </form>
+</body>
+</html>
